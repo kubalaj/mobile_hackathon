@@ -35,6 +35,10 @@ def landing():
 def view_portfolio():    
     return render_template('portfolio_view.html')
 
+@app.route('/templates')
+def templates():    
+    return render_template('templates.html')
+
 if __name__ == "__main__":
     app.run(debug=True)
 
