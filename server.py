@@ -31,11 +31,11 @@ class User(db.Model):
 def landing():
     return render_template('index.html')
     
-@app.route('/portfolio')
+@app.route('/portfolio/')
 def view_portfolio():    
     return render_template('portfolio_view.html')
 
-@app.route('/templates')
+@app.route('/templates/')
 def templates():    
     return render_template('templates.html')
 
