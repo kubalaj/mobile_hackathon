@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js">
+    </script>
+    <meta charset="utf-8">
+    <!-- Bootstrap -->
+
+    <link href="{{ url_for('static', filename="css/bootstrap.min.css") }}" rel="stylesheet">
+  
+    <link href="{{ url_for('static', filename="js/bootstrap.js") }}" rel="stylesheet">
+     <style>
+    body {
+        background-color: #00A287;
+        margin-top: 30px;
+        font-family: cool_font;
+        margin-left: 50px;
+        font-size: 24px;
+        text-align: center;
+    }
+    @font-face {
+    font-family: cool_font;
+    src: url('fonts/SIMPLIFICA Typeface.ttf');
+
+    }
+    a {
+        
+        color: black;
+    }
+
+    .menu{
+
+        font-size: 72px;
+
+    }
+    .walk{
+        height: 50%;
+    }
+    .about{
+        margin-top: 30px;
+        font-size: 24px;
+        margin-bottom: 60px;
+    }
+    .fa:hover{
+        color:  #6A6E6E;
+    }
+    .picture{
+            margin-top: 15px;
+    }
+    .btn-lg{
+        width:500px;
+    }
+    .container{
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .bottomaligned {position:absolute; bottom:0;  margin-bottom:7px; left: 0;}
+
+
+
+    </style>
+    </head>
+  <body>
+  	<div align="center">
+	  	<form name="input" id="form1">
+	      <div class="row">
+	        <div class="col-md-12 col-xs-12">
+	            Name: <input class="form-control input-lg" id="getname" type="text"
+	            placeholder="Enter name" name="name">
+	        </div>
+	      </div>
+	      <hr>
+	      <div class="row">
+	            <div class="col-md-12 col-xs-12">
+	            Email: <input type="text" class="form-control" id="getemail" placeholder="Enter email">
+	            </div>
+	      </div>
+	      <hr>
+	      <div class="row">
+	        <div class="col-md-12 col-xs-12">
+	           Your image: 
+	           <br>
+	           <input type="file" name="pic" id="getpic">
+	        </div>
+	      </div>
+	      <hr>
+	      <div class="row">
+	        <div class="col-md-12 col-xs-12">
+	            Top 5 Skills: <input type="text" class="form-control" id="getskill1" placeholder="Enter #1 skill">
+	            <input type="text" class="form-control" id="getskill2" placeholder="Enter #2 skill">
+	            <input type="text" class="form-control" id="getskill3" placeholder="Enter #3 skill">
+	            <input type="text" class="form-control" id="getskill4" placeholder="Enter #4 skill">
+	            <input type="text" class="form-control" id="getskill5" placeholder="Enter #5 skill">
+	        </div>
+	      </div>
+	      <hr>
+	      <div class="row">
+	         <div class="col-md-12 col-xs-12">
+	            Links: <input type="text" class="form-control" id="getlink1" placeholder="Enter link 1">
+	            <input type="text" class="form-control" id="getlink2" placeholder="Enter link 2">
+	            <input type="text" class="form-control" id="getlink3" placeholder="Enter link 3">
+	         </div>
+	      </div>
+	      <div align="center">
+	         <input type="button" value="Submit" id="mybutton">
+	      </div>
+	    </form>
+	</div>
+	<script>
+      $("#mybutton").click(function(e)
+        {
+            var n = $("#getname").val();
+            var e = $("#getemail").val();
+            var p = $("#getpic").val();
+            var s1 = $("#getskill1").val();
+            var s2 = $("#getskill2").val();
+            var s3 = $("#getskill3").val();
+            var s4 = $("#getskill4").val();
+            var s5 = $("#getskill5").val();
+            var l1 = $("#getlink1").val();
+            var l2 = $("#getlink2").val();
+            var l3 = $("#getlink3").val();
+            $.ajax(
+            {
+                url : "/post",
+                type: "POST",
+                data : {name: n, email: e, skill01: s1, skill02: s2, skill03: s3, skill04: s4, skill05: s5, link01: l1, link02: l2, link03: l3},
+                success : function(data){
+                  window.location.href="portfolio";
+              }
+            });
+        });
+    </script>
+  </body>
+ </html>

@@ -1,8 +1,14 @@
 from flask import Flask, request, render_template
+
 from flask.ext.sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from pprint import pprint
+
+from string import upper
+from random import random, shuffle
+from copy import deepcopy
+from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db/users.db'
@@ -46,6 +52,26 @@ def CreateDummyData():
     db.session.add(n)
     db.session.commit()
 
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
+db = SQLAlchemy(app)
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80), unique=False)
+    email = db.Column(db.String(80), unique=False)
+    skills = db.Column(db.String(80), unique=False)
+    links = db.Column(db.String(80), unique=False)
+
+    def __init__(self, name, email, skills, links):
+        self.name = name
+        self.email = email
+        self.skills = skills
+        self.links = links
+
+    def __repr__(self):
+        return '[name: %r, email:%r, skills:%r, links:%r]' % (
+            self.name, self.email, self.skills, self.links)
+
 @app.route('/')
 @app.route("/home/")
 def landing():
@@ -78,6 +104,11 @@ def post_data():
         db.session.add(user)
         db.session.commit()
 
-	
+@app.route('/templates')
+def templates():    
+    return render_template('templates.html')
+
 if __name__ == "__main__":
     app.run(debug=True)
+
+
