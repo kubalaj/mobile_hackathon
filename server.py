@@ -76,6 +76,10 @@ class User(db.Model):
 @app.route("/home/")
 def landing():
     return render_template('index.html')
+
+@app.route('/create')
+def create():
+    return render_template('form.html')
     
 @app.route('/portfolio')
 def view_portfolio():
