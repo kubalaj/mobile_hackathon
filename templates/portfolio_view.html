@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Set this to the main language of your site -->
+    <head>
+        <!-- Universal -->
+        <meta charset="utf-8">
+            
+            <!-- Define a viewport to mobile devices to use - telling the browser to assume that the page is as wide as the device (width=device-width) and setting the initial page zoom level to be 1 (initial-scale=1.0) -->
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                
+                <!-- JQuery -->
+                <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+                
+                <!-- Bootstrap -->
+                <!-- Latest compiled and minified CSS -->
+                <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+                <!-- Latest compiled and minified JavaScript -->
+                <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+                <!-- Include the site stylesheet -->
+                
+                <!---------------------------------------------------------------->
+                <!--------------------------------------------------------------------->
+                    
+                <title>{% block title %}Template Title{% endblock %}</title>
+                    
+                <!-- Enter a brief description of your page -->
+                <meta name="description" content="Flask Layout Template -- djmorrsee.com">
+                        
+                        
+    </head>
+    <body>
+        <div class="col-xs-10 col-xs-offset-1" style="margin-top:2em">
+            <div class="col-xs-6">
+                <h1>{{name}}</h1>
+                <p>{{email}}</p>
+                
+                <!--
+                {% for skill in skills %}
+                 <h3>
+                    {{ skill.name }}
+                 </h3>
+                 <p>
+                    {{ skill.description }}
+                 </p>
+                {% endfor %}
+                 -->
+                <div>
+                    <h3>Skill</h3>
+                    <p>Lorem Ipsum</p>
+                </div>
+                
+                <div>
+                    <h3>Skill</h3>
+                    <p>Lorem Ipsum</p>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <!--
+                 {% for image in imageLinks %}
+                 <img class="col-xs-6" src="{{image}}">
+                 {% endfor %}
+                 -->
+
+                <img class="col-xs-6" src="http://www.placehold.it/250x250">
+                <img class="col-xs-6" src="http://www.placehold.it/250x250">
+            </div>
+            <div class="col-xs-12" style="background-color:#000; margin-bottom:2em"></div>
+            
+            <div class="col-xs-12" align=center>
+                
+                <!--
+                {% for link in links %}
+                <li class="col-xs-6">
+                    <a href="{{ link }}">{{link}}</a>
+                </li>
+                {% endfor %}
+                 -->
+                
+                <li class="col-xs-6">
+                  <a href="http://www.google.com">www.google.com</a>
+                </li>
+                <li class="col-xs-6">
+                    <a href="http://www.google.com">www.google.com</a>
+                </li>
+                <li class="col-xs-6">
+                    <a href="http://www.google.com">www.google.com</a>
+                </li>
+                <li class="col-xs-6">
+                    <a href="http://www.google.com">www.google.com</a>
+                </li>
+            </div>
+            
+        </div>
+        
+        
+        
+    </body>
+</html>
