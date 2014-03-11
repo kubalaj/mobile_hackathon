@@ -9,7 +9,7 @@ def landing():
     
 @app.route('/portfolio')
 def view_portfolio():    
-    return render_template('portfolio_view.html', info=my_info)
+    return render_template('portfolio_view.html')
 	
 if __name__ == "__main__":
     app.run(debug=True)
