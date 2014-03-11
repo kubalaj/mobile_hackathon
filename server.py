@@ -52,26 +52,6 @@ def CreateDummyData():
     db.session.add(n)
     db.session.commit()
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
-db = SQLAlchemy(app)
-
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80), unique=False)
-    email = db.Column(db.String(80), unique=False)
-    skills = db.Column(db.String(80), unique=False)
-    links = db.Column(db.String(80), unique=False)
-
-    def __init__(self, name, email, skills, links):
-        self.name = name
-        self.email = email
-        self.skills = skills
-        self.links = links
-
-    def __repr__(self):
-        return '[name: %r, email:%r, skills:%r, links:%r]' % (
-            self.name, self.email, self.skills, self.links)
-
 @app.route('/')
 @app.route("/home/")
 def landing():
