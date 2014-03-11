@@ -61,7 +61,7 @@ def landing():
 def create():
     return render_template('form.html')
     
-@app.route('/portfolio')
+@app.route('/portfolio', methods=['GET'])
 def view_portfolio():
     users = User.query.all()
     return render_template('portfolio_view.html', info = users[0])
@@ -69,6 +69,7 @@ def view_portfolio():
 @app.route('/post', methods=['POST'])
 def post_data():
     if request.method == 'POST':
+        print 'here!'
         user = User()
         user.name = request.form['name']
         user.email = request.form['email']

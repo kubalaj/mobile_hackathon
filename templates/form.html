@@ -103,34 +103,11 @@
 	         </div>
 	      </div>
 	      <div align="center">
+            <a href="/portfolio">
 	         <input type="button" value="Submit" id="mybutton">
-	      </div>
+	      </div></a>
 	    </form>
 	</div>
-	<script>
-      $("#mybutton").click(function(e)
-        {
-            var n = $("#getname").val();
-            var e = $("#getemail").val();
-            var p = $("#getpic").val();
-            var s1 = $("#getskill1").val();
-            var s2 = $("#getskill2").val();
-            var s3 = $("#getskill3").val();
-            var s4 = $("#getskill4").val();
-            var s5 = $("#getskill5").val();
-            var l1 = $("#getlink1").val();
-            var l2 = $("#getlink2").val();
-            var l3 = $("#getlink3").val();
-            $.ajax(
-            {
-                url : "/post",
-                type: "POST",
-                data : {name: n, email: e, skill01: s1, skill02: s2, skill03: s3, skill04: s4, skill05: s5, link01: l1, link02: l2, link03: l3},
-                success : function(data){
-                  window.location.href="portfolio";
-              }
-            });
-        });
-    </script>
+	
   </body>
  </html>
