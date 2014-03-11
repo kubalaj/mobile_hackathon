@@ -28,65 +28,52 @@
                         
                         
     </head>
+    <style>
+    body{
+    background-color: #00A287;
+    }
+    </style>
     <body>
         <div class="col-xs-10 col-xs-offset-1" style="margin-top:2em">
             <div class="col-xs-6">
-                <h1>{{name}}</h1>
-                <p>{{email}}</p>
+                <h1>{{info.name}}</h1>
+                <p>{{info.email}}</p>
                 
-                <!--
-                {% for skill in skills %}
-                 <h3>
-                    {{ skill.name }}
-                 </h3>
+   
+                <h1>Skills</h1>
                  <p>
-                    {{ skill.description }}
+                    {{ info.skill01 }}
                  </p>
-                {% endfor %}
-                 -->
-                <div>
-                    <h3>Skill</h3>
-                    <p>Lorem Ipsum</p>
-                </div>
-                
-                <div>
-                    <h3>Skill</h3>
-                    <p>Lorem Ipsum</p>
-                </div>
+                 <p>
+                    {{ info.skill02 }}
+                 </p>
+                 <p>
+                    {{ info.skill03 }}
+                 </p>
+                 <p>
+                    {{ info.skill04 }}
+                 </p>
+                 <p>
+                    {{ info.skill05 }}
+                 </p>
             </div>
             <div class="col-xs-6">
-                <!--
-                 {% for image in imageLinks %}
-                 <img class="col-xs-6" src="{{image}}">
-                 {% endfor %}
-                 -->
 
-                <img class="col-xs-6" src="http://www.placehold.it/250x250">
-                <img class="col-xs-6" src="http://www.placehold.it/250x250">
+                <img class="col-xs-6" src="{{info.imageLink01}}">
+                <img class="col-xs-6" src="{{info.imageLink02}}">
+   
             </div>
             <div class="col-xs-12" style="background-color:#000; margin-bottom:2em"></div>
             
             <div class="col-xs-12" align=center>
-                
-                <!--
-                {% for link in links %}
                 <li class="col-xs-6">
-                    <a href="{{ link }}">{{link}}</a>
-                </li>
-                {% endfor %}
-                 -->
-                
-                <li class="col-xs-6">
-                  <a href="http://www.google.com">www.google.com</a>
+                    <a href="{{ info.link01 }}">{{info.link01}}</a>
                 </li>
                 <li class="col-xs-6">
-                    <a href="http://www.google.com">www.google.com</a>
+                    <a href="{{ info.link02 }}">{{info.link02}}</a>
                 </li>
                 <li class="col-xs-6">
-                    <a href="http://www.google.com">www.google.com</a>
-                </li>
-                <li class="col-xs-6">
-                    <a href="http://www.google.com">www.google.com</a>
+                    <a href="{{ info.link03 }}">{{info.link03}}</a>
                 </li>
             </div>
             
