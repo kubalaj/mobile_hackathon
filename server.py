@@ -60,8 +60,8 @@ def landing():
 @app.route('/create')
 def create():
     return render_template('form.html')
-    
-@app.route('/portfolio', methods=['GET'])
+
+@app.route('/portfolio')
 def view_portfolio():
     users = User.query.all()
     return render_template('portfolio_view.html', info = users[0])
@@ -89,7 +89,7 @@ def post_data():
         db.session.add(user)
         db.session.commit()
 
-@app.route('/templates')
+@app.route('/templates/')
 def templates():    
     return render_template('templates.html')
 
